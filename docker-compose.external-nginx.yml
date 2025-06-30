@@ -2,11 +2,9 @@ version: "3.9"
 services:
   zmb_mongo:
     container_name: zmb_mongo
-    image: mongo:6.0 # Spezifiziere eine Version, z.B. 6.0, wie im Original
+    image: mongo:6.0
     volumes:
-      - /srv/host/zeromedomedia/mongo:/data/db 
-        # Optional: :Z am Ende hinzufügen, wenn SELinux aktiv ist, z.B.
-        # - /srv/host/zeromedomedia/mongo:/data/db:Z
+      - /srv/host/zeromedomedia/mongo:/data/db
     networks:
       - zmb_data
     restart: unless-stopped
@@ -16,31 +14,23 @@ services:
     image: ghcr.io/tdjsnelling/sqtracker-api:latest
     volumes:
       - /srv/host/zeromedomedia/config/config.js:/sqtracker/config.js:ro
-        # Optional: :Z am Ende hinzufügen, wenn SELinux aktiv ist
-        # - /srv/host/zeromedomedia/config/config.js:/sqtracker/config.js:ro:Z
     depends_on:
       - zmb_mongo
     networks:
       - zmb_data
       - zmb_app_net
     restart: unless-stopped
-    # Umgebungsvariablen aus config.js werden bevorzugt, aber hier könnten
-    # Defaults oder Overrides platziert werden, falls sqtracker das unterstützt
-    # environment:
-    #   - SQTRACKER_DATABASE_URI=mongodb://zmb_mongo:27017/sqtracker # Beispiel
 
   zmb_client:
     container_name: zmb_client
     image: ghcr.io/tdjsnelling/sqtracker-client:latest
     volumes:
       - /srv/host/zeromedomedia/config/config.js:/sqtracker/config.js:ro
-        # Optional: :Z am Ende hinzufügen, wenn SELinux aktiv ist
-        # - /srv/host/zeromedomedia/config/config.js:/sqtracker/config.js:ro:Z
     depends_on:
       - zmb_api
     networks:
       - zmb_app_net
-      - nginx-expose # Dein externes Netzwerk für nginx
+      - nginx-expose
     restart: unless-stopped
 
 networks:
@@ -48,5 +38,6 @@ networks:
     driver: bridge
   zmb_app_net:
     driver: bridge
+  # Simple network with nginx container to expose web components
   nginx-expose:
     external: true
