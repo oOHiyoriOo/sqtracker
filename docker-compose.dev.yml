@@ -58,4 +58,3 @@ services:
         target: /sqtracker/config.js
     depends_on:
       - api
-
