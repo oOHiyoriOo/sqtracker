@@ -298,7 +298,7 @@ const Navigation = ({ isMobile, menuIsOpen, setMenuIsOpen }) => {
         <Text color="grey" fontSize={0}>
           {getLocaleString("poweredBy")}{" "}
           <a
-            href="https://github.com/tdjsnelling/sqtracker"
+            href="https://github.com/oOHiyoriOo/sqtracker"
             target="_blank"
             rel="noreferrer"
           >

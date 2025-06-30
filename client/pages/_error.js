@@ -38,7 +38,7 @@ const ErrorPage = () => {
         <Text>
           {getLocaleString("errIfErrorPersist")}{" "}
           <a
-            href="https://github.com/tdjsnelling/sqtracker/issues"
+            href="https://github.com/oOHiyoriOo/sqtracker/issues"
             target="_blank"
             rel="noreferrer"
           >

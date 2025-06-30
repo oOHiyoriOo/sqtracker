@@ -2,8 +2,8 @@
 
 ![Latest stable release](https://badgen.net/github/release/tdjsnelling/sqtracker/stable)
 [![License GPLv3](https://badgen.net/badge/license/GPLv3/blue)](./LICENSE)
-[![Client Docker image](https://badgen.net/badge/icon/sqtracker-client/blue?icon=docker&label)](https://github.com/tdjsnelling/sqtracker/pkgs/container/sqtracker-client)
-[![API Docker image](https://badgen.net/badge/icon/sqtracker-api/blue?icon=docker&label)](https://github.com/tdjsnelling/sqtracker/pkgs/container/sqtracker-api)
+[![Client Docker image](https://badgen.net/badge/icon/sqtracker-client/blue?icon=docker&label)](https://github.com/oOHiyoriOo/sqtracker/pkgs/container/sqtracker-client)
+[![API Docker image](https://badgen.net/badge/icon/sqtracker-api/blue?icon=docker&label)](https://github.com/oOHiyoriOo/sqtracker/pkgs/container/sqtracker-api)
 [![Discord](https://badgen.net/discord/members/BEGXEk29Up)](https://discord.gg/BEGXEk29Up)
 
 sqtracker is a modern private BitTorrent tracker platform.
@@ -50,11 +50,19 @@ Please join the [Discord server](https://discord.gg/BEGXEk29Up) for support and 
 
 The roadmap is still being expanded.
 
+### General:
 * Forum support & direct messages
 * Better profiles (avatar, bio etc.)
-* Premoderation option
-* Anti-cheat
-  
+* Achivements
+* Point Shop
+
+### Admin
+* UI-Settings
+* User-Managment
+* Permission Managment (Roles)
+
+__ __
+
 ## Configuration
 
 All configuration is provided via a single JavaScript file named `config.js`. This file must export an object containing 2 keys: `envs` and `secrets`.
